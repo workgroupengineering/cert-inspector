@@ -116,8 +116,12 @@ async function ensureBrowserInstalled() {
         // Note: Using internal API as Playwright doesn't provide a public API for programmatic installation
         const { registry } = require('playwright-core/lib/server/registry/index');
         
-        // Install chromium, chromium-headless-shell (required for headless mode), and winldd (Windows dependency checker)
-        const browserNames = ['chromium', 'chromium-headless-shell', 'winldd'];
+        // Install chromium and chromium-headless-shell (required for headless mode)
+        // winldd is only needed on Windows for dependency checking
+        const browserNames = ['chromium', 'chromium-headless-shell'];
+        if (process.platform === 'win32') {
+          browserNames.push('winldd');
+        }
         const executables = browserNames
           .map(name => registry.findExecutable(name))
           .filter(exe => exe !== null);
