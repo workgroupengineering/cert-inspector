@@ -4,7 +4,7 @@ const dns = require('dns').promises;
 const tls = require('tls');
 const https = require('https');
 const { execSync, spawn } = require('child_process');
-const whois = require('whois-json');
+const whois = require('./whois-lookup');
 const psl = require('psl');
 
 const app = express();

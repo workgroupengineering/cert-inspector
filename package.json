@@ -19,7 +19,7 @@
       "node_modules/playwright-core/lib/server/registry/oopDownloadBrowserMain.js"
     ],
     "assets": [
-      "node_modules/whois/servers.json"
+      "whois-servers.json"
     ],
     "outputPath": "dist"
   },
@@ -27,9 +27,7 @@
     "express": "^4.18.2",
     "open": "^11.0.0",
     "playwright": "1.52.0",
-    "psl": "^1.15.0",
-    "whois": "2.14.2",
-    "whois-json": "^2.0.4"
+    "psl": "^1.15.0"
   },
   "devDependencies": {
     "pkg": "^5.8.1"
